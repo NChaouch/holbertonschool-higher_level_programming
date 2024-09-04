@@ -2,14 +2,19 @@
 def fizzbuzz():
     for number in range(1, 101):
         string = ""
-        if number % 3 == 0:  # check if number is divisible by 3
-            string += "Fizz"
-        if number % 5 == 0:
-            string += "Buzz"
-        if number % 3 != 0 and number % 5 != 0:
-            string = str(number)
+        # Check if number is divisible by both 3 and 5
+        if number % 3 == 0 and number % 5 == 0:
+            string = "FizzBuzz"
+        elif number % 3 == 0:  # Check if number is divisible by 3
+            string = "Fizz"
+        elif number % 5 == 0:  # Check if number is divisible by 5
+            string = "Buzz"
+        else:
+            string = str(number)  # If false, just print the number
+
         print(string, end=" ")
 
+# Call the function to display result
 
-# call the function for display result
+
 fizzbuzz()
