@@ -10,9 +10,3 @@ def fizzbuzz():
             print("Buzz", end=" ")
         else:
             print(number, end=" ")  # If false, just print the number
-
-
-# Call the function to display result
-
-
-fizzbuzz()
