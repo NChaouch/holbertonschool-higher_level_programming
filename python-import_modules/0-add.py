@@ -1,11 +1,16 @@
 #!/usr/bin/python3
-# ensure the following code only run when the file is executed directly
+
+# Import the function add from the file add_0.py
+from add_0 import add
+
+# Define the variables a and b
+a = 1
+b = 2
+
+# Ensure the following code only runs when the file is executed directly
 if __name__ == "__main__":
-    # Import the function add from file add_0.py
-    from add_0 import add
+    # Calculate the result of the addition
+    result = add(a, b)
 
-    a = 1  # De©ine variable a
-    b = 2  # De©ine variable 
-
-    # display the result of the function
-    print("{} + {} = {}".format(a, b, add(a, b))
+    # Display the result using string formatting
+    print("{} + {} = {}".format(a, b, result))
