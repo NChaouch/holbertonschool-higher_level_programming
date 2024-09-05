@@ -2,9 +2,7 @@
 for first_dg in range(10):
     # ensures that the second digit is always greater than the first.
     for second_dg in range(first_dg + 1, 10):
-        pair = f"{first_dg}{second_dg}"
-
-        if first_dg == 8:
-            print(pair)
+        if first_dg == 8 and second_dg == 9:
+            print(f"{first_dg}{second_dg}")
         else:
-            print(pair, end=", ")
+            print(f"{first_dg}{second_dg}", end=", ")
