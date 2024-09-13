@@ -1,0 +1,24 @@
+>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+# two names are str
+print("input valid")
+say_my_name("Nour", "NChaouch")
+
+# only name
+print("first_name only")
+say_my_name("kala")
+
+# the first name is not a string
+print("first name is not a string")
+try:
+	say_my_name(56, "NChaouch")
+except TypeError as e:
+	print(e)
+
+
+# the last name is not a string
+print("last name is not a string")
+try:
+	say_my_name("nono", 45)
+except TypeError as e:
+	print(e)
