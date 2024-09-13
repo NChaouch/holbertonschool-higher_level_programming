@@ -1,0 +1,23 @@
+>>> add_integer = __import__('0-add_integer').add_integer
+
+# add integers with integers
+>>> a = 2
+>>> b = 4
+>>> add_integer(a, b)
+6
+
+# a is a string
+>>> a = 'bonjour'
+>>> b = 4
+>>> add_integer(a, b)
+Traceback (most recent call last):
+TypeError: a must be an integer
+
+# b is a string
+>>> a = 2
+>>> b = 'salut'
+>>> add_integer(a, b)
+Traceback (most recent call last):
+TypeError: b must be an integer
+
+>>> a 
