@@ -1,24 +1,19 @@
 >>> say_my_name = __import__('3-say_my_name').say_my_name
 
 # two names are str
-print("input valid")
-say_my_name("Nour", "NChaouch")
+>>> say_my_name("Nour", "NChaouch")
 
 # only name
-print("first_name only")
-say_my_name("kala")
+>>> say_my_name("kala")
+Traceback (most recent call last):
+TypeError: last_name must be a string
 
 # the first name is not a string
-print("first name is not a string")
-try:
-	say_my_name(56, "NChaouch")
-except TypeError as e:
-	print(e)
-
+>>> say_my_name(56, "NChaouch")
+Traceback (most recent call last):
+TypeError: first_name must be a string
 
 # the last name is not a string
-print("last name is not a string")
-try:
-	say_my_name("nono", 45)
-except TypeError as e:
-	print(e)
+>>> say_my_name("nono", 45)
+Traceback (most recent call last):
+TypeError: last_name must be a string
