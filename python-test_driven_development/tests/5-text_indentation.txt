@@ -1,0 +1,15 @@
+>>> text_indentation = __import__("5-text_indentation").text_indentation
+
+# integer instead of a string
+>>> text_indentation(5)
+Traceback (most recent call last):
+TypeError: text must be a string
+
+# argument is None instead of a string.
+>>> text_indentation(None)
+Traceback (most recent call last):
+TypeError: text must be a string
+
+# valid string
+>>> text_indentation("$")
+$
