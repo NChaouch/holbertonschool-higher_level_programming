@@ -33,4 +33,4 @@ def text_indentation(text):
             result.append(punc)
             space_ignore = False
 
-        print("".join(result))
+    print("".join(result))
