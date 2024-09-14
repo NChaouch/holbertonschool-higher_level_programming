@@ -3,8 +3,13 @@
 # two names are str
 >>> say_my_name("Nour", "NChaouch")
 
-# only name
->>> say_my_name("kala")
+# none first name
+>>> say_my_name(None, "bdx")
+Traceback (most recent call last):
+TypeError: first_name must be a string
+
+# none last name
+>>> say_my_name("kala", None)
 Traceback (most recent call last):
 TypeError: last_name must be a string
 
@@ -15,5 +20,25 @@ TypeError: first_name must be a string
 
 # the last name is not a string
 >>> say_my_name("nono", 45)
+Traceback (most recent call last):
+TypeError: last_name must be a string
+
+# first name is a float
+>>> say_my_name(3.14, "NChaouch")
+Traceback (most recent call last):
+TypeError: first_name must be a string
+
+# last name is a float
+>>> say_my_name("Nour", 3.14)
+Traceback (most recent call last):
+TypeError: last_name must be a string
+
+# first name is a boolean
+>>> say_my_name(True, "NChaouch")
+Traceback (most recent call last):
+TypeError: first_name must be a string
+
+# last name is a boolean
+>>> say_my_name("Nour", False)
 Traceback (most recent call last):
 TypeError: last_name must be a string
