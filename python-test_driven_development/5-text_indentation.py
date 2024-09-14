@@ -1,7 +1,7 @@
 #!/usr/bin/python3
+
 """
-Function prints  a text with 2 new lines after
-each of these characters: ., ? and :
+This contains the tex_indentation function
 """
 
 
@@ -19,18 +19,19 @@ def text_indentation(text):
     if not isinstance(text, str):
         raise TypeError("text must be a string")
 
-    result = []
-    space_ignore = False
+    punc = {'.', '?', ':'}
+    text = text.strip()  # remove white spaces at the start and end of str
 
-    for punc in text:
-        if punc in ['.', '?', ':']:
-            result.append(punc)
-            result.append("\n\n")
-            space_ignore = True
-        elif punc == " " and space_ignore:
+    ct = 0
+    leng = len(text)
+    while ct < leng:
+        print(text[ct], end="")
+
+        if text[ct] in punc:
+            print("\n")
+            ct += 1
+            while ct < leng and text[ct] == " ":
+                ct += 1
             continue
-        else:
-            result.append(punc)
-            space_ignore = False
 
-    print("".join(result))
+        ct += 1
