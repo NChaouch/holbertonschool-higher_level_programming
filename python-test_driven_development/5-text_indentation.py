@@ -18,16 +18,19 @@ def text_indentation(text):
 
     if not isinstance(text, str):
         raise TypeError("text must be a string")
-    result = ""
+
+    result = []
     space_ignore = False
 
     for punc in text:
         if punc in ['.', '?', ':']:
-            result += punc + "\n\n"
+            result.append(punc)
+            result.append("\n\n")
             space_ignore = True
         elif punc == " " and space_ignore:
             continue
         else:
-            result += punc
+            result.append(punc)
             space_ignore = False
-        print(result)
+
+        print("".join(result))
