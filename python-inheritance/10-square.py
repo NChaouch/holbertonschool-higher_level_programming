@@ -20,11 +20,10 @@ class Square(Rectangle):
 
         # str "size" if is error (msg error)
         self.integer_validator("size", size)
+        # call the method of rectangle
+        super().__init__(size, size)
         # if success the value of size is give to private att __size
         self.__size = size
 
     def area(self):  # Calcul area of Square
         return self.__size ** 2
-
-    def __str__(self):
-        return (f"[Rectangle] {self.__size}/{self.__size}")
