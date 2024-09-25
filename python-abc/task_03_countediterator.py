@@ -23,9 +23,13 @@ class CountedIterator:
         # return self for the iterations in code
         return self
 
-    def __next__(self):  # call for each iteration
-        self.count += 1  # iteration
-        return next(self.iterable)  # return next item
+    def __next__(self):
+        try:
+            item = next(self.iterable)  # call for each iteration
+            self.count += 1  # iteration
+            return item
+        except StopIteration:
+            raise StopIteration
 
     def get_count(self):
         return self.count  # num elem iteration
