@@ -1,0 +1,58 @@
+>>> MyList = __import__('1-my_list').MyList
+
+>>> my_list = MyList([10, 5, 12, 7])
+>>> my_list.print_sorted()
+[5, 7, 10, 12]
+
+>>> print(my_list)
+[10, 5, 12, 7]
+
+>>> empty_list = MyList()
+>>> print(empty_list)
+[]
+>>> empty_list.append(9)
+>>> empty_list.append(3)
+>>> empty_list.print_sorted()
+[3, 9]
+
+>>> print(empty_list)
+[9, 3]
+
+>>> float_list = MyList([4.2, 1.8, 9.6])
+>>> print(float_list)
+[4.2, 1.8, 9.6]
+>>> float_list.print_sorted()
+[1.8, 4.2, 9.6]
+
+>>> mixed_list = MyList([0, -7, 14, 3, -2])
+>>> mixed_list.print_sorted()
+[-7, -2, 0, 3, 14]
+>>> print(mixed_list)
+[0, -7, 14, 3, -2]
+
+>>> same_elements_list = MyList([99, 99, 99])
+>>> print(same_elements_list)
+[99, 99, 99]
+>>> same_elements_list.print_sorted()
+[99, 99, 99]
+
+>>> negative_list = MyList([-11, -9, -7, -13])
+>>> negative_list.print_sorted()
+[-13, -11, -9, -7]
+
+>>> print(negative_list)
+[-11, -9, -7, -13]
+
+>>> single_item_list = MyList([88])
+>>> print(single_item_list)
+[88]
+>>> single_item_list.print_sorted()
+[88]
+
+>>> duplicate_list = MyList([8, 4, 8, 4, 2])
+>>> duplicate_list.print_sorted()
+[2, 4, 4, 8, 8]
+
+>>> print(duplicate_list)
+[8, 4, 8, 4, 2]
+
