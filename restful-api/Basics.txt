@@ -1,1 +1,166 @@
-Test
+#1 Difference between HTTP et HTTPS
+HTTP (Hyper Text Transfert Protocal) is not secure because the data is not encrypted making it vulnerable to interception by attackers.
+HTTPS (Hyper Text Trnasfert Protocal Secure) is secure because the data is encrypted (usually SSL or TLS).
+The data is transmitted between the user's browser and the server.
+
+#2 Resume of the structure of an HTTP request and response.
+1/Request
+GET /index.html HTTP/1.1  
+Host: www.example.com  
+User-Agent: Mozilla/5.0  
+
+2/Response
+HTTP/1.1 200 OK  
+Content-Type: text/html  
+Content-Length: 3489  
+
+<html>  
+  <body>  
+    <h1>Welcome to Example</h1>  
+  </body>  
+</html>
+
+
+#3 Lists of common HTTP methods and status codes
+GET: Retrieves data, Use case: Fetching a web page or data from an API.
+POST: Sends data to the server to create a new resource. Use case: Submitting form data, creating a new user, or sending data to an API.
+PUT: Updates or replaces an existing resource with the provided data. Use case: Updating a user profile or replacing an existing entry in a database.
+DELETE: Removes an existing resource from the server. Use case: Deleting a user account, removing a record from a database, or deleting content via an API.
+
+1xx: Informational
+
+100 Continue
+Meaning: Used to indicate that the initial part of a request has been accepted and the client can continue.
+
+2xx: Success
+
+200 OK
+Meaning: The request was successful, and the server is returning the requested resource.
+
+201 Created
+Meaning: After a POST request, a new resource was created.
+
+204 No Content
+Meaning: Used after a successful DELETE or PUT request when no additional data needs to be returned.
+
+3xx: Redirection
+
+301 Moved Permanently
+Meaning: The requested resource has been moved to a new URL permanently.
+
+302 Found
+Meaning: Used when temporarily redirecting the client to a new location.
+
+4xx: Client Errors
+
+400 Bad Request
+Meaning: Sent when the client sends a malformed request
+
+401 Unauthorized
+Meaning: When trying to access a protected resource without logging in.
+
+403 Forbidden
+Meaning: Accessing restricted content without appropriate permissions.
+
+404 Not Found
+Meaning: When a user attempts to visit a non-existent page.
+
+5xx: Server Errors
+
+500 Internal Server Error
+Meaning: General server errors when something goes wrong on the server's side.
+
+502 Bad Gateway
+Meaning: Used when one server is trying to communicate with another server that isn’t responding properly.
+
+503 Service Unavailable
+Meaning: When the server is down for maintenance or overwhelmed by traffic.
+
+
+EN FRANCAIS
+
+#1 Différence entre HTTP et HTTPS
+HTTP (Hypertext Transfer Protocol) n'est pas sécurisé car les données ne sont pas chiffrées, ce qui les rend vulnérables aux interceptions par des attaquants.
+HTTPS (Hypertext Transfer Protocol Secure) est sécurisé car les données sont chiffrées (généralement avec SSL ou TLS).
+Les données sont transmises entre le navigateur de l'utilisateur et le serveur.
+
+#2 Résumé de la structure d'une requête et d'une réponse HTTP.
+
+1/ Requête
+
+GET /index.html HTTP/1.1  
+Host: www.example.com  
+User-Agent: Mozilla/5.0  
+
+2/ Réponse
+
+HTTP/1.1 200 OK  
+Content-Type: text/html  
+Content-Length: 3489  
+
+<html>  
+  <body>  
+    <h1>Bienvenue sur Example</h1>  
+  </body>  
+</html>
+
+
+#3 Liste des méthodes HTTP courantes et des codes de statut
+
+GET : Récupère des données.
+Cas d'utilisation : Récupérer une page web ou des données depuis une API.
+
+POST : Envoie des données au serveur pour créer une nouvelle ressource.
+Cas d'utilisation : Soumettre des données de formulaire, créer un nouvel utilisateur ou envoyer des données à une API.
+
+PUT : Met à jour ou remplace une ressource existante avec les données fournies.
+Cas d'utilisation : Mettre à jour un profil utilisateur ou remplacer une entrée dans une base de données.
+
+DELETE : Supprime une ressource existante du serveur.
+Cas d'utilisation : Supprimer un compte utilisateur, retirer un enregistrement d'une base de données, ou supprimer du contenu via une API.
+
+1xx : Informations
+100 Continue
+Signification : Indique que la première partie d'une requête a été acceptée, et que le client peut continuer.
+
+2xx : Succès
+200 OK
+Signification : La requête a été effectuée avec succès, et le serveur renvoie la ressource demandée.
+
+201 Created
+Signification : Après une requête POST, une nouvelle ressource a été créée.
+
+204 No Content
+Signification : Utilisé après une requête DELETE ou PUT réussie lorsque aucune donnée supplémentaire ne doit être renvoyée.
+
+3xx : Redirection
+301 Moved Permanently
+Signification : La ressource demandée a été déplacée de façon permanente à une nouvelle URL.
+
+302 Found
+Signification : Utilisé lors d'une redirection temporaire du client vers un autre emplacement.
+
+4xx : Erreurs côté client
+400 Bad Request
+Signification : Envoyé lorsque le client envoie une requête malformée.
+
+401 Unauthorized
+Signification : Lorsque l'accès à une ressource protégée est tenté sans authentification.
+
+403 Forbidden
+Signification : Accès refusé à un contenu restreint sans les autorisations appropriées.
+
+404 Not Found
+Signification : Lorsqu'un utilisateur tente d'accéder à une page inexistante.
+
+5xx : Erreurs côté serveur
+500 Internal Server Error
+Signification : Erreur générale du serveur lorsque quelque chose ne fonctionne pas correctement de son côté.
+
+502 Bad Gateway
+Signification : Utilisé lorsqu'un serveur tente de communiquer avec un autre serveur qui ne répond pas correctement.
+
+503 Service Unavailable
+Signification : Lorsque le serveur est temporairement indisponible, souvent à cause de la maintenance ou d'une surcharge de trafic.
+
+Cela couvre les différences entre HTTP et HTTPS, les structures des requêtes/réponses HTTP, et une liste des méthodes et codes d'état HTTP courants.
