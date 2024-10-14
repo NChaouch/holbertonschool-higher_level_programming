@@ -1,26 +1,26 @@
 #!/usr/bin/python3
 
-import http.server
 import json
+import http.server
 
 """
-define prototypes and import
+class for simple API
 """
 
 
 class SimpleHTTPRequestHandler(http.server.BaseHTTPRequestHandler):
 
     """
-    code
+    definition of the GET method
     """
 
     def do_GET(self):
         if self.path == '/':
             self.send_response(200)
-            self.send_header("Content-type", "text/plain")
+            self.send_header('Content-type', 'text/plain')
             self.end_headers()
-            self.wfile.write(b"Hello, this is a simple API!")
-        elif self.path == '/data':
+            self.wfile.write(b'Hello, this is a simple API!')
+        elif self.path == "/data":
             self.send_response(200)
             self.send_header("Content-type", "application/json")
             self.end_headers()
@@ -28,12 +28,13 @@ class SimpleHTTPRequestHandler(http.server.BaseHTTPRequestHandler):
             self.wfile.write(json.dumps(data).encode())
         elif self.path == '/info':
             self.send_response(200)
-            self.send_header("Content-type", "text/plain")
+            self.send_header('Content-type', 'application/json')
             self.end_headers()
-            info = {"version": "1.0",
-                    "description": "A simple API built with http.server"}
-            self.wfile.write(json.dumps(info).encode())
-        elif self.path == '/status':
+            json_data = {"version": "1.0",
+                         "description": "A simple API built with http.server"}
+            json_bytes = json.dumps(json_data).encode("utf-8")
+            self.wfile.write(json_bytes)
+        elif self.path == "/status":
             self.send_response(200)
             self.send_header("Content-type", "text/plain")
             self.end_headers()
@@ -42,11 +43,11 @@ class SimpleHTTPRequestHandler(http.server.BaseHTTPRequestHandler):
             self.send_response(404)
             self.send_header("Content-type", "text/plain")
             self.end_headers()
-            self.wfile.write(b"404 Not Found")
+            self.wfile.write(b"Endpoint not found")
 
 
 PORT = 8000
 
+
 with http.server.HTTPServer(("", PORT), SimpleHTTPRequestHandler) as httpd:
-    print(f"Serving on port {PORT}")
     httpd.serve_forever()
