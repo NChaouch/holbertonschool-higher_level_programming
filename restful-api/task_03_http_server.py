@@ -8,10 +8,9 @@ define prototypes and import
 import http.server
 import socketserver
 import json
-PORT = 8000
 
 
-class RequestHandler(http.server.BaseHTTPRequestHandler):
+class SimpleHTTPRequestHandler(http.server.BaseHTTPRequestHandler):
 
     """
     code
@@ -46,7 +45,8 @@ class RequestHandler(http.server.BaseHTTPRequestHandler):
             self.wfile.write(b"404 Not Found")
 
 
-# create server tcp for communicate with customers
-with socketserver.TCPServer(("", PORT), RequestHandler) as httpd:
+PORT = 8000
+
+with http.server.HTTPServer(("", PORT), SimpleHTTPRequestHandler) as httpd:
     print(f"Serving on port {PORT}")
     httpd.serve_forever()
