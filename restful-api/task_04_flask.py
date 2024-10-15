@@ -16,9 +16,11 @@ def home():
 def get_data():
     return jsonify(list(users.keys()))
 
+
 @app.route("/status")
 def get_status():
     return "OK"
+
 
 @app.route("/add_user", methods=["POST"])
 def addUser():
@@ -27,10 +29,11 @@ def addUser():
 
     if username is None:
         return jsonify({"error": "Username is required"})
-    
+
     users[username] = user_data
 
     return jsonify(message="User added", user=user_data)
+
 
 @app.route("/users/<username>")
 def get_user(username):
@@ -40,6 +43,7 @@ def get_user(username):
         return jsonify(user)
     else:
         return jsonify({"error": "User not found"})
+
 
 if __name__ == "__main__":
     app.run()
