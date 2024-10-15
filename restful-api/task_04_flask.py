@@ -28,11 +28,11 @@ def addUser():
     username = user_data.get("username")
 
     if username is None:
-        return jsonify({"error": "Username is required"})
+        return jsonify({"error": "Username is required"}), 400
 
     users[username] = user_data
 
-    return jsonify(message="User added", user=user_data)
+    return jsonify(message="User added", user=user_data), 201
 
 
 @app.route("/users/<username>")
@@ -42,7 +42,7 @@ def get_user(username):
     if user:
         return jsonify(user)
     else:
-        return jsonify({"error": "User not found"})
+        return jsonify({"error": "User not found"}), 404
 
 
 if __name__ == "__main__":
