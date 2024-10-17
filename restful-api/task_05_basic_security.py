@@ -53,7 +53,7 @@ def generate_jwt_token():
                       'role': user_recup['role']}
         )
         return jsonify(access_token=jwt_token)
-    return jsonify(error="Invalid login details"), 401
+    return jsonify(error="Invalid credentials"), 401
 
 
 @app.route('/jwt-protected-route')
@@ -73,27 +73,27 @@ def admin_only_route():
 
 @jwt.unauthorized_loader
 def handle_missing_token(_):
-    return jsonify(error="Authorization token is missing or invalid"), 401
+    return jsonify(error="Missing or invalid token"), 401
 
 
 @jwt.invalid_token_loader
 def handle_invalid_token(_):
-    return jsonify(error="Invalid token provided"), 401
+    return jsonify(error="Invalid token"), 401
 
 
 @jwt.expired_token_loader
 def handle_expired_token(_):
-    return jsonify(error="Your token has expired"), 401
+    return jsonify(error="Token has expired"), 401
 
 
 @jwt.revoked_token_loader
 def handle_revoked_token(_):
-    return jsonify(error="The token has been revoked"), 401
+    return jsonify(error="Token has been revoked"), 401
 
 
 @jwt.needs_fresh_token_loader
 def handle_fresh_token_required(_):
-    return jsonify(error="A fresh token is required for this action"), 401
+    return jsonify(error="Fresh token required"), 401
 
 
 if __name__ == "__main__":
