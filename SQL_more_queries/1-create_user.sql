@@ -2,7 +2,7 @@
 -- creation script
 CREATE USER IF NOT EXISTS 'user_0d_1'@'localhost'
 IDENTIFIED BY 'user_0d_1_pwd';
--- for all databases (*.*) and according all privileges at other users.
-GRANT ALL PRIVILEGES ON *.* TO 'user_0d_1'@'localhost' WITH GRANT OPTION;
+-- for all databases (*.*) and according all privileges for user.
+GRANT ALL PRIVILEGES ON *.* TO 'user_0d_1'@'localhost';
 -- for modification is acting 
 FLUSH PRIVILEGES;
