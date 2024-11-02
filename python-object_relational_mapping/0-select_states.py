@@ -1,9 +1,15 @@
 #!/usr/bin/python3
 
+"""
+import code
+"""
 
 import MySQLdb
 import sys
 
+"""
+code
+"""
 
 if __name__ == "__main__":
     db = MySQLdb.connect(
