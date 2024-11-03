@@ -31,7 +31,6 @@ if __name__ == "__main__":
 
     states = session.query(State).all()
 
-
     for state in states:
         if "a" in state.name:
             print("{}: {}".format(state.id, state.name))
