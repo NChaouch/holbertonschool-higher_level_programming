@@ -18,15 +18,16 @@ def about():
 def contact():
     return render_template('contact.html')
 
+
 @app.route('/items')
 def items():
     try:
         with open('items.json', "r") as file_open:
             data = json.load(file_open)
-            item = data.get("items")
-            return render_template('items.html', item)
-    except:
-        return render_template('items.html', item)
+            items = data.get("items", [])
+            return render_template('items.html', items=items)
+    except Exception as e:
+        return render_template('items.html', items=[])
 
 
 if __name__ == '__main__':
